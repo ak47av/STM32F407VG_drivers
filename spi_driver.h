@@ -38,7 +38,7 @@
 #define SPI_MASTER_MODE_SEL							1
 #define SPI_SLAVE_MODE_SEL							0
 
-#define SPI_REG_CR1_CPOL								((uit32_t) 1 << 1)
+#define SPI_REG_CR1_CPOL								((uint32_t) 1 << 1)
 #define SPI_CPOL_LOW										0
 #define SPI_CPOL_HIGH										1
 
@@ -140,5 +140,12 @@ void hal_spi_slave_tx(spi_handle_t *spi_handle, uint8_t *rcv_buffer, uint32_t le
 
 void hal_i2c_spi_irq_handler(spi_handle_t *hspi);
 
+void hal_spi_tx_close_interrupt(spi_handle_t *hspi);
+
+void hal_spi_rx_close_interrupt(spi_handle_t *hspi);
+
+void hal_spi_handle_tx_interrupt(spi_handle_t *hspi);
+
+void hal_spi_handle_rx_interrupt(spi_handle_t *hspi);
 
 #endif
